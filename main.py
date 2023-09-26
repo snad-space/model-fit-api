@@ -71,8 +71,6 @@ def approximate(data: Target):
     
 
 @app.post('/api/v1/sncosmo')
-async def sncosmo(data: Target):
-    
-    
+async def sn_cosmo(data: Target):
     
     return approximate(data)
