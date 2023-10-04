@@ -21,6 +21,7 @@ dependencies = [
     "pandas",
     "pydantic",
     "sncosmo",
+    "uvicorn[standard]",  # Used to run the debug server
 ]
 
 # On a mac, install optional dependencies with `pip install '.[dev]'` (include the single quotes)
