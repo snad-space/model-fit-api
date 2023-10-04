@@ -17,6 +17,7 @@ dynamic = ["version"]
 dependencies = [
     "astropy",
     "fastapi",
+    "iminuit",  # sncosmo uses it for fitting
     "pandas",
     "pydantic",
     "sncosmo",
@@ -30,9 +31,9 @@ dev = [
     "pre-commit", # Used to run checks before finalizing a git commit
     "sphinx", # Used to automatically generate documentation
     "sphinx-rtd-theme", # Used to render documentation
-    "sphinx-autoapi", # Used to automatically generate api documentation
+    "autodoc_pydantic[erdantic]", # Used to automatically generate api documentation for pydantic models
     "black", # Used for static linting of files
-    "asv==0.5.1", # Used to compute performance benchmarks
+    "httpx", # Required by fastapi.testclient
 ]
 
 [build-system]

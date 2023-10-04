@@ -1,13 +1,13 @@
+import json
+from typing import Literal, List, Dict
+
+import numpy as np
+import pandas as pd
+import sncosmo
+from astropy.table import Table
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import Literal, List, Dict
-import sncosmo
-import sfdmap
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-from astropy.table import Table
-import json
+
 
 app = FastAPI()
 
@@ -81,4 +81,5 @@ def approximate(data: Target):
 
 @app.post("/api/v1/sncosmo")
 async def sn_cosmo(data: Target):
+    """Fit light curve with sncosmo."""
     return approximate(data)
