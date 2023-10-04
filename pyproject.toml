@@ -1,5 +1,6 @@
 [project]
 name = "model-fit-api"
+version = "0.1.0"
 license = {file = "LICENSE"}
 readme = "README.md"
 authors = [
@@ -13,7 +14,6 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
 ]
-dynamic = ["version"]
 dependencies = [
     "astropy",
     "fastapi",
@@ -37,16 +37,6 @@ dev = [
     "httpx", # Required by fastapi.testclient
 ]
 
-[build-system]
-requires = [
-    "setuptools>=62", # Used to build and package the Python project
-    "setuptools_scm>=6.2", # Gets release version from git. Makes it available programmatically
-]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools_scm]
-write_to = "src/model_fit_api/_version.py"
-
 [tool.pytest.ini_options]
 testpaths = [
     "tests",
@@ -55,7 +45,3 @@ testpaths = [
 [tool.black]
 line-length = 110
 target-version = ["py38"]
-
-
-[tool.coverage.run]
-omit=["src/model_fit_api/_version.py"]
