@@ -8,7 +8,8 @@ from astropy.table import Table
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-
+models = ['salt2', 'nugent-sn1a', 'nugent-sn91t', 'nugent-sn91bg', 'nugent-sn1bc', 'nugent-hyper', 'nugent-sn2n',
+          'nugent-sn2p', 'nugent-sn2l']
 app = FastAPI()
 
 
@@ -83,3 +84,8 @@ def approximate(data: Target):
 async def sn_cosmo(data: Target):
     """Fit light curve with sncosmo."""
     return approximate(data)
+
+
+@app.get('/api/v1/models')
+async def models(data: Target):
+    return {'models': models}
