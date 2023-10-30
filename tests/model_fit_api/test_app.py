@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from model_fit_api.app import app
+from src.model_fit_api.app import app
 
 
 TEST_CLIENT = TestClient(app)
