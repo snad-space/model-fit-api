@@ -74,7 +74,7 @@ def get_flux_and_params(summary, data, fitted_model, t_min, t_max, count):
 
 
 def approximate(data: Target):
-    df = pd.DataFrame([obs.dict() for obs in data.light_curve])
+    df = pd.DataFrame([obs.model_dump() for obs in data.light_curve])
     table = Table.from_pandas(df)
     summary, fitted_model = fit(table, data.name_model, data.ebv, data.redshift)
     result = get_flux_and_params(summary, table, fitted_model, data.t_min, data.t_max, data.count)
