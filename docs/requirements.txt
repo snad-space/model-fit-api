@@ -1,3 +1,4 @@
 sphinx
 sphinx-rtd-theme
+autoapi
 autodoc_pydantic[erdantic]
