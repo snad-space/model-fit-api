@@ -1,6 +1,8 @@
 services:
   model_fit_api:
     build: .
+    ports:
+      - "80"
     networks:
       - proxy
     environment:
