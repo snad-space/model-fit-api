@@ -5,7 +5,7 @@ repos:
     # This hook should always pass. It will print a message if the local version 
     # is out of date.
   - repo: https://github.com/lincc-frameworks/pre-commit-hooks
-    rev: v0.1.1
+    rev: v0.2.2
     hooks:
       - id: check-lincc-frameworks-template-version
         name: Check template version
@@ -14,7 +14,7 @@ repos:
 
     # Prevents committing directly branches named 'main' and 'master'.
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v6.0.0
     hooks:
       - id: no-commit-to-branch
         name: Prevent main branch commits
@@ -26,7 +26,7 @@ repos:
 
     # Verify that pyproject.toml is well formed
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.12.1
+    rev: '0.26'
     hooks:
       - id: validate-pyproject
         name: Validate pyproject.toml
@@ -36,8 +36,8 @@ repos:
 
 
     # Analyze the code style and report code that doesn't adhere.
-  - repo: https://github.com/psf/black
-    rev: 23.7.0
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.5.1
     hooks:
       - id: black-jupyter
         name: Format code using black
